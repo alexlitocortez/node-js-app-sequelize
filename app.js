@@ -5,6 +5,10 @@ const path = require('path');
 
 const app = express();
 
+// Body Parser
+app.use(express.urlencoded({ extended: false }));
+
+// Index route
 app.get('/', (req, res) => res.send('INDEX'));
 
 // Gig routes

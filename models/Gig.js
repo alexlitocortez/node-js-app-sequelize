@@ -20,7 +20,8 @@ const Gig = db.define('gig', {
 })
 
 Gig.sync().then(() => {
-    console.log('table created');
-});
+console.log("The table for the User model was just created!")
+    });
 
 module.exports = Gig;
+
