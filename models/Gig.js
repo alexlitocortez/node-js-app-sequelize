@@ -16,12 +16,13 @@ const Gig = db.define('gig', {
     },
     contact_email: {
         type: Sequelize.STRING
-    },
-})
+    }
+});
 
 Gig.sync().then(() => {
-console.log("The table for the User model was just created!")
-    });
+    console.log('table created');
+});
+
+
 
 module.exports = Gig;
-

@@ -5,6 +5,11 @@ const path = require('path');
 
 const app = express();
 
+// Handlebars
+app.engine('handlebars', exphbs.engine({ defaultLayout: 'main' }));
+
+const Gig = require('./models/Gig');
+
 // Body Parser
 app.use(express.urlencoded({ extended: false }));
 
@@ -32,6 +37,7 @@ const initApp = async () => {
 }
 
 initApp(); 
+
 
 app.listen(PORT, console.log('Server started on port 3000'));
 
