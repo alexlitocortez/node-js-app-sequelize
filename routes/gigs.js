@@ -3,6 +3,17 @@ const router = express.Router();
 const db = require('../config/database');
 const Gig = require('../models/Gig');
 
+// Get gig list
+router.get('/', (req, res) =>
+    Gig.findAll()
+        .then(gigs => {
+            console.log(gigs);
+            res.render('gigs', {
+                gigs: gigs
+            });
+        })
+        .catch(err => console.log(err)));    
+
 const data = {
     title: 'Simple',
     technologies: 'react, javascript, html, css',
@@ -13,6 +24,10 @@ const data = {
 
 const { title, technologies, budget, description, contact_email } = data;
 
+// Display add gig form
+router.get('/add', (req, res) => res.render('add'));
+
+// Add a gig
 Gig.bulkCreate([
     { title: data.title, technologies: data.technologies, budget: data.budget, description: data.description, contact_email: data.contact_email }
 ])

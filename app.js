@@ -7,6 +7,10 @@ const app = express();
 
 // Handlebars
 app.engine('handlebars', exphbs.engine({ defaultLayout: 'main' }));
+app.set('view engine', 'handlebars');
+
+// Set static folder
+app.use(express.static(path.join(__dirname, 'public')));
 
 const Gig = require('./models/Gig');
 

@@ -1,7 +1,7 @@
 {
   "name": "node.js-app-sequelize",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simple job find app for coders",
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
