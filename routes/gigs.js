@@ -24,6 +24,7 @@ const data = {
 
 const { title, technologies, budget, description, contact_email } = data;
 
+
 // Display add gig form
 router.get('/add', (req, res) => res.render('add'));
 
