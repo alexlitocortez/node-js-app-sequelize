@@ -18,14 +18,15 @@ const Gig = require('./models/Gig');
 app.use(express.urlencoded({ extended: false }));
 
 // Index route
-app.get('/', (req, res) => res.send('INDEX'));
+app.get('/', (req, res) => res.render('index', { layout: 'landing' }))
 
 // Gig routes
 app.use('/gigs', require('./routes/gigs'));
 
+
 const PORT = process.env.PORT || 3000;
 
-// database
+// databasef
 const db = require('./config/database');
 
 // Testing connection
